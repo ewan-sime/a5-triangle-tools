@@ -1,0 +1,47 @@
+! First triangle program
+
+let
+
+ type Str ~ array 5 of Char;
+ const maxlength ~ 5;
+
+ func sum (a: Integer, b: Integer): Integer ~
+  a+b;
+ 
+ func product (a: Integer, b: Integer): Integer ~
+  a*b;
+
+ func compare (a: Integer, b: Integer): Boolean ~
+  if a = b
+  then true
+  else false;
+
+ proc putStr (str: Str) ~
+  let var i: Integer
+  in
+   begin
+   i := 0;
+   while i < maxlength do
+    begin
+    put (str[i]);
+    i := i+1
+    end
+   end;
+
+
+
+ var operand1: Integer;
+ var operand2: Integer;
+ var same: Str
+
+in
+ begin
+  same := ['S','a','m','e','!'];
+  getint (var operand1);
+  getint (var operand2);
+  putint (sum (operand1, operand2)); puteol ();
+  putint (product (operand1, operand2)); puteol ();
+
+  if compare (operand1, operand2)
+  then putStr(same) else;
+ end
