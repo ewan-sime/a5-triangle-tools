@@ -37,6 +37,7 @@ import triangle.abstractSyntaxTrees.commands.CallCommand;
 import triangle.abstractSyntaxTrees.commands.EmptyCommand;
 import triangle.abstractSyntaxTrees.commands.IfCommand;
 import triangle.abstractSyntaxTrees.commands.LetCommand;
+import triangle.abstractSyntaxTrees.commands.RepeatCommand;
 import triangle.abstractSyntaxTrees.commands.SequentialCommand;
 import triangle.abstractSyntaxTrees.commands.WhileCommand;
 import triangle.abstractSyntaxTrees.declarations.BinaryOperatorDeclaration;
@@ -161,6 +162,11 @@ public class LayoutVisitor implements ActualParameterVisitor<Void, DrawingTree>,
 		var d1 = ast.E.visit(this);
 		var d2 = ast.C.visit(this);
 		return layoutBinary("WhileCom.", d1, d2);
+	}
+	
+	@Override
+	public DrawingTree visitRepeatCommand(RepeatCommand ast, Void frame) {
+	return null;
 	}
 
 	// Expressions
